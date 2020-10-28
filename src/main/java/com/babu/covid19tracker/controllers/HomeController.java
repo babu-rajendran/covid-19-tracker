@@ -17,7 +17,7 @@ public class HomeController {
         this.covid19DataService = covid19DataService;
     }
 
-    @GetMapping("/")
+    @GetMapping("/covid19")
     public String home(Model model) {
         List<LocationStats> allStats = covid19DataService.getAllStats();
         int totalReportedCases = allStats.stream().mapToInt(LocationStats::getLatestTotalCases).sum();

@@ -11,15 +11,15 @@
 
 <body>
 <div class="container">
-<h1>COVID-19 Tracker Application</h1>
-<p>This application lists the current number of cases reported across the world</p>
+<h1>COVID-19 Tracker</h1>
+<p>This page shows the current number of cases reported across the world</p>
 
 <div class="jumbotron">
     <h1 class="display-4" th:text="${totalReportedCases}">Total Cases</h1>
     <p class="lead">Total cases reported as of today</p>
     <hr class="my-4">
     <p>
-        <span>New cases reported since previous day</span>
+        <span>New cases reported since yesterday</span>
         <span th:text="${totalNewCases}"></span>
     </p>
 </div>
@@ -30,7 +30,7 @@
         <th>Country</th>
         <th>State</th>
         <th>Latest Total Cases</th>
-        <th>Changes since last day</th>
+        <th>Changes since yesterday</th>
     </tr>
     <tr th:each="locationStat : ${locationStats}">
         <td th:text="${locationStat.country}"></td>
